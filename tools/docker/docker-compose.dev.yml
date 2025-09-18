@@ -1,0 +1,253 @@
+# Pyloto Delivery System - Development Environment
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: pyloto-postgres-dev
+    environment:
+      POSTGRES_DB: pyloto_dev
+      POSTGRES_USER: pyloto
+      POSTGRES_PASSWORD: pyloto123
+      POSTGRES_MULTIPLE_DATABASES: "pyloto_test"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-multiple-databases.sh:/docker-entrypoint-initdb.d/init-multiple-databases.sh
+    networks:
+      - pyloto-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pyloto -d pyloto_dev"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: pyloto-redis-dev
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - pyloto-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./apps/delivery-system
+      dockerfile: Dockerfile.dev
+    container_name: pyloto-backend-dev
+    environment:
+      - DEBUG=true
+      - ENVIRONMENT=development
+      - DATABASE_URL=postgresql+asyncpg://pyloto:pyloto123@postgres:5432/pyloto_dev
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/2
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./apps/delivery-system:/app
+      - ./packages:/packages
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - pyloto-network
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Celery Worker
+  celery-worker:
+    build:
+      context: ./apps/delivery-system
+      dockerfile: Dockerfile.dev
+    container_name: pyloto-celery-worker-dev
+    environment:
+      - DEBUG=true
+      - ENVIRONMENT=development
+      - DATABASE_URL=postgresql+asyncpg://pyloto:pyloto123@postgres:5432/pyloto_dev
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/2
+    volumes:
+      - ./apps/delivery-system:/app
+      - ./packages:/packages
+    depends_on:
+      - postgres
+      - redis
+      - backend
+    networks:
+      - pyloto-network
+    command: celery -A src.workers.celery_app worker --loglevel=info --concurrency=2
+
+  # Celery Beat (Scheduler)
+  celery-beat:
+    build:
+      context: ./apps/delivery-system
+      dockerfile: Dockerfile.dev
+    container_name: pyloto-celery-beat-dev
+    environment:
+      - DEBUG=true
+      - ENVIRONMENT=development
+      - DATABASE_URL=postgresql+asyncpg://pyloto:pyloto123@postgres:5432/pyloto_dev
+      - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/2
+    volumes:
+      - ./apps/delivery-system:/app
+      - ./packages:/packages
+    depends_on:
+      - postgres
+      - redis
+      - backend
+    networks:
+      - pyloto-network
+    command: celery -A src.workers.celery_app beat --loglevel=info
+
+  # Website (Next.js)
+  website:
+    build:
+      context: ./apps/website
+      dockerfile: Dockerfile.dev
+    container_name: pyloto-website-dev
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
+      - NEXT_PUBLIC_SITE_URL=http://localhost:3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./apps/website:/app
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - pyloto-network
+    command: npm run dev
+
+  # Admin Panel (Next.js)
+  admin-panel:
+    build:
+      context: ./apps/admin-panel
+      dockerfile: Dockerfile.dev
+    container_name: pyloto-admin-panel-dev
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
+      - NEXT_PUBLIC_SITE_URL=http://localhost:3001
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./apps/admin-panel:/app
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - pyloto-network
+    command: npm run dev
+
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    container_name: pyloto-nginx-dev
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./tools/docker/nginx/dev.conf:/etc/nginx/nginx.conf
+      - ./tools/docker/nginx/ssl:/etc/nginx/ssl
+    depends_on:
+      - backend
+      - website
+      - admin-panel
+    networks:
+      - pyloto-network
+
+  # Monitoring - Prometheus
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: pyloto-prometheus-dev
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./tools/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - pyloto-network
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+
+  # Monitoring - Grafana
+  grafana:
+    image: grafana/grafana:latest
+    container_name: pyloto-grafana-dev
+    ports:
+      - "3002:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./tools/monitoring/grafana/provisioning:/etc/grafana/provisioning
+    networks:
+      - pyloto-network
+    depends_on:
+      - prometheus
+
+  # Development Tools - Mailhog (Email testing)
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: pyloto-mailhog-dev
+    ports:
+      - "1025:1025"  # SMTP
+      - "8025:8025"  # Web UI
+    networks:
+      - pyloto-network
+
+  # Database Administration - pgAdmin
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pyloto-pgadmin-dev
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pyloto.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - pyloto-network
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
+  redis_data:
+  prometheus_data:
+  grafana_data:
+  pgadmin_data:
+
+networks:
+  pyloto-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
