@@ -1,0 +1,141 @@
+2025-09-19T15:55:46.964484Z	Cloning repository...
+2025-09-19T15:55:48.92598Z	From https://github.com/pyloto/pyloto
+2025-09-19T15:55:48.926404Z	 * branch            44a6e4658500ba17cf0238a7a22e0fbea2c610db -> FETCH_HEAD
+2025-09-19T15:55:48.926494Z	
+2025-09-19T15:55:49.112589Z	HEAD is now at 44a6e46 fix: Atualizar comandos de build do Cloudflare Pages e versão do Node.js para 20.x
+2025-09-19T15:55:49.112978Z	
+2025-09-19T15:55:49.192993Z	
+2025-09-19T15:55:49.193395Z	Using v2 root directory strategy
+2025-09-19T15:55:49.213475Z	Success: Finished cloning repository files
+2025-09-19T15:55:51.110425Z	Checking for configuration in a Wrangler configuration file (BETA)
+2025-09-19T15:55:51.111191Z	
+2025-09-19T15:55:51.112843Z	Found wrangler.toml file. Reading build configuration...
+2025-09-19T15:55:51.119427Z	pages_build_output_dir: ../../.vercel/output/static
+2025-09-19T15:55:51.119577Z	Build environment variables: 
+2025-09-19T15:55:51.119763Z	  - NEXT_PUBLIC_SITE_ENV: production
+2025-09-19T15:55:52.313857Z	Successfully read wrangler.toml file.
+2025-09-19T15:55:52.382627Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2025-09-19T15:55:52.383269Z	Installing project dependencies: npm install --progress=false
+2025-09-19T15:55:53.731233Z	npm warn EBADENGINE Unsupported engine {
+2025-09-19T15:55:53.73235Z	npm warn EBADENGINE   package: 'pyloto-corp@1.0.0',
+2025-09-19T15:55:53.732776Z	npm warn EBADENGINE   required: { node: '20.x', npm: '>=9.0.0' },
+2025-09-19T15:55:53.733042Z	npm warn EBADENGINE   current: { node: 'v22.16.0', npm: '10.9.2' }
+2025-09-19T15:55:53.733289Z	npm warn EBADENGINE }
+2025-09-19T15:55:53.733544Z	npm warn EBADENGINE Unsupported engine {
+2025-09-19T15:55:53.733682Z	npm warn EBADENGINE   package: '@pyloto/website@1.0.0',
+2025-09-19T15:55:53.733818Z	npm warn EBADENGINE   required: { node: '20.x', npm: '>=9.0.0' },
+2025-09-19T15:55:53.733923Z	npm warn EBADENGINE   current: { node: 'v22.16.0', npm: '10.9.2' }
+2025-09-19T15:55:53.734018Z	npm warn EBADENGINE }
+2025-09-19T15:55:55.280528Z	npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-09-19T15:55:56.265181Z	npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-09-19T15:55:56.497647Z	npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+2025-09-19T15:55:56.82595Z	npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+2025-09-19T15:55:57.291693Z	npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-09-19T15:55:57.348879Z	npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-09-19T15:55:57.717452Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T15:55:57.78431Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T15:55:57.823703Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T15:55:57.922207Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T15:55:58.011381Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T15:55:59.438253Z	npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-09-19T15:56:05.232205Z	
+2025-09-19T15:56:05.232457Z	added 732 packages, and audited 734 packages in 12s
+2025-09-19T15:56:05.233052Z	
+2025-09-19T15:56:05.233138Z	182 packages are looking for funding
+2025-09-19T15:56:05.23323Z	  run `npm fund` for details
+2025-09-19T15:56:05.234179Z	
+2025-09-19T15:56:05.234352Z	found 0 vulnerabilities
+2025-09-19T15:56:05.26611Z	Executing user command: npx @cloudflare/next-on-pages@latest
+2025-09-19T15:56:06.806566Z	npm warn exec The following package was not found and will be installed: @cloudflare/next-on-pages@1.13.16
+2025-09-19T15:56:26.7945Z	npm warn deprecated path-match@1.2.4: This package is archived and no longer maintained. For support, visit https://github.com/expressjs/express/discussions
+2025-09-19T15:56:28.090741Z	npm warn deprecated @cloudflare/next-on-pages@1.13.16: Please use the OpenNext adapter instead: https://opennext.js.org/cloudflare
+2025-09-19T15:56:36.102782Z	⚡️ @cloudflare/next-on-pages CLI v.1.13.16
+2025-09-19T15:56:36.300658Z	⚡️ Detected Package Manager: npm (10.9.2)
+2025-09-19T15:56:36.300883Z	⚡️ Preparing project...
+2025-09-19T15:56:36.304114Z	⚡️ Project is ready
+2025-09-19T15:56:36.304547Z	⚡️ Building project...
+2025-09-19T15:56:37.548512Z	▲  npm warn exec The following package was not found and will be installed: vercel@48.0.3
+2025-09-19T15:56:40.068904Z	▲  npm warn deprecated path-match@1.2.4: This package is archived and no longer maintained. For support, visit https://github.com/expressjs/express/discussions
+2025-09-19T15:56:41.811969Z	▲  Vercel CLI 48.0.3
+2025-09-19T15:56:41.81652Z	▲  > NOTE: The Vercel CLI now collects telemetry regarding usage of the CLI.
+2025-09-19T15:56:41.816807Z	▲  > This information is used to shape the CLI roadmap and prioritize features.
+2025-09-19T15:56:41.816975Z	▲  > You can learn more, including how to opt-out if you'd not like to participate in this program, by visiting the following URL:
+2025-09-19T15:56:41.817221Z	▲  > https://vercel.com/docs/cli/about-telemetry
+2025-09-19T15:56:41.923501Z	▲  WARN! Build not running on Vercel. System environment variables will not be available.
+2025-09-19T15:56:42.086718Z	▲  WARNING: You should not upload the `.next` directory.
+2025-09-19T15:56:42.093648Z	▲  Installing dependencies...
+2025-09-19T15:56:42.813903Z	▲  npm warn EBADENGINE Unsupported engine {
+2025-09-19T15:56:42.814215Z	▲  npm warn EBADENGINE   package: 'pyloto-corp@1.0.0',
+2025-09-19T15:56:42.814368Z	▲  npm warn EBADENGINE   required: { node: '20.x', npm: '>=9.0.0' },
+2025-09-19T15:56:42.81499Z	▲  npm warn EBADENGINE   current: { node: 'v22.16.0', npm: '10.9.2' }
+2025-09-19T15:56:42.815197Z	▲  npm warn EBADENGINE }
+2025-09-19T15:56:42.81534Z	▲  npm warn EBADENGINE Unsupported engine {
+2025-09-19T15:56:42.815458Z	▲  npm warn EBADENGINE   package: '@pyloto/website@1.0.0',
+2025-09-19T15:56:42.815581Z	▲  npm warn EBADENGINE   required: { node: '20.x', npm: '>=9.0.0' },
+2025-09-19T15:56:42.815706Z	▲  npm warn EBADENGINE   current: { node: 'v22.16.0', npm: '10.9.2' }
+2025-09-19T15:56:42.815831Z	▲  npm warn EBADENGINE }
+2025-09-19T15:56:42.821196Z	▲  npm warn EBADENGINE Unsupported engine {
+2025-09-19T15:56:42.821437Z	▲  npm warn EBADENGINE   package: '@pyloto/website@1.0.0',
+2025-09-19T15:56:42.821958Z	▲  npm warn EBADENGINE   required: { node: '20.x', npm: '>=9.0.0' },
+2025-09-19T15:56:42.822067Z	▲  npm warn EBADENGINE   current: { node: 'v22.16.0', npm: '10.9.2' }
+2025-09-19T15:56:42.82219Z	▲  npm warn EBADENGINE }
+2025-09-19T15:56:43.552367Z	▲  up to date in 1s
+2025-09-19T15:56:43.552605Z	▲  182 packages are looking for funding
+2025-09-19T15:56:43.552855Z	▲  run `npm fund` for details
+2025-09-19T15:56:43.562509Z	▲  Detected Next.js version: 14.2.32
+2025-09-19T15:56:43.568184Z	▲  Running "npm run build"
+2025-09-19T15:56:43.795604Z	▲  > @pyloto/website@1.0.0 build
+2025-09-19T15:56:43.795853Z	▲  > next build
+2025-09-19T15:56:44.498841Z	▲  ▲ Next.js 14.2.32
+2025-09-19T15:56:44.499134Z	▲  
+2025-09-19T15:56:44.555561Z	▲  Creating an optimized production build ...
+2025-09-19T15:56:54.76565Z	▲  ✓ Compiled successfully
+2025-09-19T15:56:54.766669Z	▲  Linting and checking validity of types ...
+2025-09-19T15:56:57.534801Z	▲  Collecting page data ...
+2025-09-19T15:56:58.74242Z	▲  Generating static pages (0/4) ...
+2025-09-19T15:56:59.165095Z	▲  Generating static pages (1/4)
+2025-09-19T15:56:59.171216Z	▲  Generating static pages (2/4)
+2025-09-19T15:56:59.196007Z	▲  Generating static pages (3/4)
+2025-09-19T15:56:59.214845Z	▲  ✓ Generating static pages (4/4)
+2025-09-19T15:56:59.249633Z	▲  Finalizing page optimization ...
+2025-09-19T15:56:59.250029Z	▲  Collecting build traces ...
+2025-09-19T15:56:59.255784Z	▲  
+2025-09-19T15:56:59.265977Z	▲  Route (app)                              Size     First Load JS
+2025-09-19T15:56:59.266186Z	▲  ┌ ○ /                                    10.6 kB        97.7 kB
+2025-09-19T15:56:59.266304Z	▲  └ ○ /_not-found                          873 B            88 kB
+2025-09-19T15:56:59.266465Z	▲  + First Load JS shared by all            87.2 kB
+2025-09-19T15:56:59.266592Z	▲  ├ chunks/1dd3208c-81ed6f0c0717af80.js  53.6 kB
+2025-09-19T15:56:59.266727Z	▲  ├ chunks/528-6320bba1500e8e23.js       31.6 kB
+2025-09-19T15:56:59.26699Z	▲  └ other shared chunks (total)          1.96 kB
+2025-09-19T15:56:59.267141Z	▲  ○  (Static)  prerendered as static content
+2025-09-19T15:56:59.379592Z	▲  Traced Next.js server files in: 19.138ms
+2025-09-19T15:56:59.398822Z	▲  Created all serverless functions in: 19.13ms
+2025-09-19T15:56:59.406772Z	▲  Collected static files (public/, static/, .next/static): 3.73ms
+2025-09-19T15:56:59.439715Z	▲  Build Completed in .vercel/output [17s]
+2025-09-19T15:56:59.572556Z	⚡️ Completed `npx vercel build`.
+2025-09-19T15:56:59.637962Z	
+2025-09-19T15:56:59.638184Z	⚡️ Build Summary (@cloudflare/next-on-pages v1.13.16)
+2025-09-19T15:56:59.638738Z	⚡️ 
+2025-09-19T15:56:59.638861Z	⚡️ Prerendered Routes (2)
+2025-09-19T15:56:59.639217Z	⚡️   ┌ /
+2025-09-19T15:56:59.639342Z	⚡️   └ /index.rsc
+2025-09-19T15:56:59.639457Z	⚡️ 
+2025-09-19T15:56:59.639711Z	⚡️ Other Static Assets (31)
+2025-09-19T15:56:59.639853Z	⚡️   ┌ /_app.rsc.json
+2025-09-19T15:56:59.639949Z	⚡️   ├ /_document.rsc.json
+2025-09-19T15:56:59.640058Z	⚡️   ├ /_error.rsc.json
+2025-09-19T15:56:59.64017Z	⚡️   ├ /404.html
+2025-09-19T15:56:59.64029Z	⚡️   └ ... 27 more
+2025-09-19T15:56:59.640392Z	
+2025-09-19T15:56:59.640489Z	⚡️ Build log saved to '.vercel/output/static/_worker.js/nop-build-log.json'
+2025-09-19T15:56:59.640586Z	⚡️ Generated '.vercel/output/static/_worker.js/index.js'.
+2025-09-19T15:56:59.640677Z	⚡️ Build completed in 0.07s
+2025-09-19T15:56:59.681084Z	Finished
+2025-09-19T15:57:00.679912Z	Checking for configuration in a Wrangler configuration file (BETA)
+2025-09-19T15:57:00.680482Z	
+2025-09-19T15:57:00.681577Z	Found wrangler.toml file. Reading build configuration...
+2025-09-19T15:57:00.688849Z	pages_build_output_dir: ../../.vercel/output/static
+2025-09-19T15:57:00.689041Z	Build environment variables: 
+2025-09-19T15:57:00.689195Z	  - NEXT_PUBLIC_SITE_ENV: production
+2025-09-19T15:57:01.790357Z	Successfully read wrangler.toml file.
+2025-09-19T15:57:03.779251Z	Failed: an internal error occurred. If this continues, contact support: https://cfl.re/3WgEyrH
