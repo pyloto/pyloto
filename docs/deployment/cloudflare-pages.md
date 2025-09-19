@@ -17,7 +17,7 @@ Este guia descreve o processo para build e deploy do app `apps/website` usando *
 
 ## 🗂 Estrutura de Build
 - Output gerado: `.vercel/output/static`
-- Configuração Cloudflare: `apps/website/wrangler.toml` (apenas um arquivo — evitar duplicar na raiz para não confundir Pages)
+- Configuração Cloudflare: `apps/website/wrangler.toml` (não duplicar na raiz — evita resolução irregular)
 
 ## ⚙ Configuração Cloudflare Pages
 No dashboard:
@@ -126,7 +126,7 @@ Ver `docs/changelogs/` para registro diário.
 | Sintoma | Causa provável | Ação |
 |---------|----------------|------|
 | No wrangler.toml file found | Arquivo só na raiz enquanto Root Directory = apps/website | Mover/duplicar para `apps/website/wrangler.toml` (preferir manter apenas um) |
-| internal error após segundo "Found wrangler.toml" | Duplicidade de `wrangler.toml` (raiz e subpasta) causando resolução estranha de `pages_build_output_dir` | Remover arquivo duplicado, manter somente o dentro de `apps/website` |
+| internal error após segundo "Found wrangler.toml" | Duplicidade ou relocação recente do `wrangler.toml` gerando caminho `../../.vercel` | Manter arquivo só em `apps/website` e limpar cache do projeto |
 | Node version ignorada (usa 22.x) | Cloudflare Pages default mais novo que engines | Adicionar `.node-version` e/ou setar Node no painel Build Settings |
 | too many arguments. Expected 0 arguments | Uso antigo: `npx @cloudflare/next-on-pages build` | Remover `build` e usar apenas `npx @cloudflare/next-on-pages@latest` |
 | paths como ../../.vercel/output/static no log | Caminho relativo recalculado por conta de múltiplos níveis de wrangler | Garantir apenas um `wrangler.toml` e caminho `.vercel/output/static` |
@@ -135,4 +135,4 @@ Notas adicionais:
 - Se o erro interno persistir após limpar duplicidades, abrir ticket Cloudflare anexando o log completo.
 - Planeje migração para OpenNext conforme aviso de depreciação.
 
-Última atualização: 2025-09-19 (build command, remoção wrangler duplicado, troubleshooting)
+Última atualização: 2025-09-19 (wrangler definitivo em apps/website, ajuste troubleshooting)

@@ -1,0 +1,12 @@
+name = "pyloto-website"
+compatibility_date = "2025-09-19"
+pages_build_output_dir = ".vercel/output/static"
+
+compatibility_flags = []
+
+[vars]
+NEXT_PUBLIC_SITE_ENV = "production"
+
+# Comentário: manter este arquivo apenas aqui (apps/website) pois o Root Directory
+# no Cloudflare Pages está configurado para esta pasta. Evita path recalculado como ../../
+# e potenciais internal errors na segunda fase de leitura do wrangler.
