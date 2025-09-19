@@ -17,6 +17,25 @@ cp .env.example .env
 npm run dev
 ```
 
+## Sobre a Pyloto Corp
+- CNPJ - 57.200.209/0001-16
+- Whatsapp - +5542991619261
+- Área de atendimento - Ponta Grossa e Campos Gerais do Paraná
+- Emails:
+   contato@pyloto.com.br
+   devhub@pyloto.com.br
+   comercial@pyloto.com.br
+   sac@pyloto.com.br
+   juridico@pyloto.com.br
+
+### Serviços
+- Desenvolvimento de sistemas exclusivos e pensados caso a caso.
+- Automação de WhatsApp (Chatbot IA)
+- Gestão de tráfego
+- Configuração de Perfis de negócio e portifólios empresariais (Meta)
+- Vinculação de métricas de acesso de todos os perfis, redes sociais e sites
+- Intermediação de entregas com Pyloto entrega
+
 ## 🎯 Sobre o Projeto
 
 A **Pyloto** é uma startup de delivery inteligente que utiliza IA para revolucionar o mercado de entregas. Nosso diferencial é o assistente **O.T.T.O** (Optimized Transport & Tracking Operations), que funciona via WhatsApp e automatiza todo o processo de cotação, pagamento e acompanhamento de entregas.
@@ -419,6 +438,17 @@ Para iniciar, comece criando o repositório com a estrutura proposta e migre os 
 - **Multi-cloud**: Distribuição entre provedores para alta disponibilidade
 
 ## 📄 Licença & Atualizações
+
+### Deploy do Website (Cloudflare Pages)
+Guia completo: [`docs/deployment/cloudflare-pages.md`](docs/deployment/cloudflare-pages.md)
+
+Scripts úteis:
+```bash
+npm run cf:build:website     # build edge
+npm run cf:preview:website   # preview local
+npm run cf:deploy:website    # deploy produção (branch main)
+```
+Variáveis mínimas: `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_WHATSAPP_NUMBER`, `WHATSAPP_WEBHOOK_TOKEN` (se uso de validação front/edge), segredos OpenAI/PagSeguro/Maps.
 
 Este documento foca em visão macro. Atualizações táticas e checklist de execução: ver [`docs/backlog/README.md`](docs/backlog/README.md).
 

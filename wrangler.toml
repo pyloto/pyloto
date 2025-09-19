@@ -1,0 +1,21 @@
+name = "pyloto-website"
+compatibility_date = "2025-09-19"
+pages_build_output_dir = ".vercel/output/static"
+
+# Futuras flags de compatibilidade podem ser adicionadas aqui
+compatibility_flags = []
+
+[vars]
+NEXT_PUBLIC_SITE_ENV = "production"
+
+# Exemplos de bindings futuros (descomentados quando provisionados)
+# [[kv_namespaces]]
+# binding = "PYLOTO_CACHE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# [[r2_buckets]]
+# binding = "MEDIA_BUCKET"
+# bucket_name = "pyloto-media"
+
+# [ai]
+# binding = "AI"

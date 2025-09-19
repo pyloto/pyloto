@@ -70,9 +70,9 @@ Checklist mínimo (parcialmente pendente):
 ## 🔧 Pendências Técnicas Atuais
 | Item | Status |
 |------|--------|
-| Instalar dependências (react/next/tailwind etc.) | Pendente |
-| Configurar Tailwind (config + postcss) | Pendente |
-| Ajustar links placeholders no Header/Footer | Pendente |
+| Instalar dependências (react/next/tailwind etc.) | Concluído |
+| Configurar Tailwind (config + postcss) | Concluído |
+| Ajustar links placeholders no Header/Footer | Em progresso |
 | Conteúdo real de marketing | Pendente |
 | WhatsApp CTA funcional com mensagem pré-preenchida | Pendente |
 
@@ -98,4 +98,4 @@ Scripts (previstos em `package.json` do app):
 | Portal dev | Documentação pública da API |
 
 ---
-Última atualização: 2025-09-19
+Última atualização: 2025-09-19 (atualizado acessibilidade header/footer, env WhatsApp)
