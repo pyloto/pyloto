@@ -15,9 +15,9 @@
     "build": "npm run build:website && npm run build:admin",
     "build:website": "cd apps/website && npm run build",
     "build:admin": "cd apps/admin-panel && npm run build",
-  "cf:build:website": "cd apps/website && npx @cloudflare/next-on-pages@latest build",
-  "cf:preview:website": "cd apps/website && npx @cloudflare/next-on-pages@latest build && npx wrangler pages dev .vercel/output/static",
-  "cf:deploy:website": "cd apps/website && npx @cloudflare/next-on-pages@latest build && npx wrangler pages deploy .vercel/output/static --branch=main",
+    "cf:build:website": "cd apps/website && npx @cloudflare/next-on-pages@latest",
+    "cf:preview:website": "cd apps/website && npx @cloudflare/next-on-pages@latest && npx wrangler pages dev .vercel/output/static",
+    "cf:deploy:website": "cd apps/website && npx @cloudflare/next-on-pages@latest && npx wrangler pages deploy .vercel/output/static --branch=main",
     "test": "npm run test --workspaces",
     "lint": "npm run lint --workspaces",
     "setup": "npm install && npm run setup:backend && npm run setup:frontend",
@@ -32,7 +32,7 @@
     "typescript": "^5.0.0"
   },
   "engines": {
-    "node": ">=18.0.0",
+    "node": "20.x",
     "npm": ">=9.0.0"
   },
   "repository": {

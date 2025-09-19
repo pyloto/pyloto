@@ -26,7 +26,7 @@ No dashboard:
 3. Root directory: `apps/website` (ou root + script com `cd`)
 4. Build command:
    ```bash
-   npx @cloudflare/next-on-pages@latest build
+   npx @cloudflare/next-on-pages@latest
    ```
 5. Output directory: `.vercel/output/static`
 6. Node version: 20
@@ -35,7 +35,7 @@ No dashboard:
 | Campo UI Cloudflare | Valor a Informar | Observações |
 |---------------------|------------------|-------------|
 | Framework preset | None (ou Detect automaticamente) | Usamos `next-on-pages`; não selecionar outro preset (evita conflito) |
-| Build command | `npx @cloudflare/next-on-pages@latest build` | Usa npx, não precisa devDependency fixa |
+| Build command | `npx @cloudflare/next-on-pages@latest` | Removido arg `build` (CLI espera zero args) |
 | Build output directory | `.vercel/output/static` | Gerado após o build next-on-pages |
 | Root directory (Project settings → Builds) | `apps/website` | Caso deixe root vazio use script com `cd apps/website && ...` |
 | Node version | `20` | Garantir consistência com local |
@@ -43,7 +43,7 @@ No dashboard:
 
 Se optar por não usar root directory (deixar em branco), ajuste Build command para:
 ```bash
-cd apps/website && npx @cloudflare/next-on-pages@latest build
+cd apps/website && npx @cloudflare/next-on-pages@latest
 ```
 
 ## 🔐 Variáveis de Ambiente
@@ -83,7 +83,7 @@ wrangler secret put PAGSEGURO_TOKEN
 ```
 
 ## 🚀 Deploy via CLI
-Pré-requisitos: `npm i -D @cloudflare/next-on-pages wrangler` (usa npx, não instala fixo agora).
+Pré-requisitos: `wrangler` instalado (global ou via npx). O adaptador roda via npx; para fixar versão adicione em devDependencies depois.
 
 ```bash
 npm run cf:deploy:website
@@ -122,4 +122,4 @@ Workflow (resumido):
 Ver `docs/changelogs/` para registro diário.
 
 ---
-Última atualização: 2025-09-19
+Última atualização: 2025-09-19 (atualizado build command)

@@ -1,0 +1,41 @@
+2025-09-19T15:45:13.879058Z	Cloning repository...
+2025-09-19T15:45:14.795706Z	From https://github.com/pyloto/pyloto
+2025-09-19T15:45:14.796156Z	 * branch            79207865eeea7cb8fda45d2e787efda53be59736 -> FETCH_HEAD
+2025-09-19T15:45:14.796255Z	
+2025-09-19T15:45:14.976162Z	HEAD is now at 7920786 Add TypeScript configuration file with strict settings and ES2020 target
+2025-09-19T15:45:14.976644Z	
+2025-09-19T15:45:15.056247Z	
+2025-09-19T15:45:15.056794Z	Using v2 root directory strategy
+2025-09-19T15:45:15.078142Z	Success: Finished cloning repository files
+2025-09-19T15:45:16.993468Z	Checking for configuration in a Wrangler configuration file (BETA)
+2025-09-19T15:45:16.994017Z	
+2025-09-19T15:45:18.102148Z	No wrangler.toml file found. Continuing.
+2025-09-19T15:45:18.171369Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2025-09-19T15:45:18.172004Z	Installing project dependencies: npm install --progress=false
+2025-09-19T15:45:21.166816Z	npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-09-19T15:45:22.255817Z	npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-09-19T15:45:22.596253Z	npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+2025-09-19T15:45:22.821867Z	npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+2025-09-19T15:45:23.352954Z	npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-09-19T15:45:23.459093Z	npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-09-19T15:45:23.73517Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T15:45:23.907451Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T15:45:24.00743Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T15:45:24.018003Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T15:45:24.087555Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T15:45:25.606037Z	npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-09-19T15:45:31.430974Z	
+2025-09-19T15:45:31.431338Z	added 732 packages, and audited 734 packages in 13s
+2025-09-19T15:45:31.431607Z	
+2025-09-19T15:45:31.43177Z	181 packages are looking for funding
+2025-09-19T15:45:31.431897Z	  run `npm fund` for details
+2025-09-19T15:45:31.432728Z	
+2025-09-19T15:45:31.432908Z	found 0 vulnerabilities
+2025-09-19T15:45:31.464289Z	Executing user command: npx @cloudflare/next-on-pages@latest build
+2025-09-19T15:45:32.719085Z	npm warn exec The following package was not found and will be installed: @cloudflare/next-on-pages@1.13.16
+2025-09-19T15:45:44.3321Z	npm warn deprecated path-match@1.2.4: This package is archived and no longer maintained. For support, visit https://github.com/expressjs/express/discussions
+2025-09-19T15:45:46.875238Z	npm warn deprecated @cloudflare/next-on-pages@1.13.16: Please use the OpenNext adapter instead: https://opennext.js.org/cloudflare
+2025-09-19T15:45:55.343516Z	error: too many arguments. Expected 0 arguments but got 1.
+2025-09-19T15:45:55.373402Z	Failed: Error while executing user command. Exited with error code: 1
+2025-09-19T15:45:55.383873Z	Failed: build command exited with code: 1
+2025-09-19T15:45:56.61181Z	Failed: error occurred while running build command
