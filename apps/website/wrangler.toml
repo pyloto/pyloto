@@ -2,7 +2,7 @@ name = "pyloto-website"
 compatibility_date = "2025-09-19"
 pages_build_output_dir = ".vercel/output/static"
 
-compatibility_flags = []
+compatibility_flags = ["nodejs_compat"]
 
 [vars]
 NEXT_PUBLIC_SITE_ENV = "production"
