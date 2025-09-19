@@ -1,0 +1,102 @@
+2025-09-19T20:18:46.237546Z	Cloning repository...
+2025-09-19T20:18:47.977734Z	From https://github.com/pyloto/pyloto
+2025-09-19T20:18:47.97818Z	 * branch            ba678f37b611cf8a4b213927c219a178b2adea3c -> FETCH_HEAD
+2025-09-19T20:18:47.978311Z	
+2025-09-19T20:18:48.166845Z	HEAD is now at ba678f3 refactor: Renomear componente CTA para Cta e ajustar importações na página inicial
+2025-09-19T20:18:48.167411Z	
+2025-09-19T20:18:48.247239Z	
+2025-09-19T20:18:48.247799Z	Using v2 root directory strategy
+2025-09-19T20:18:48.271009Z	Success: Finished cloning repository files
+2025-09-19T20:18:50.224944Z	Checking for configuration in a Wrangler configuration file (BETA)
+2025-09-19T20:18:50.225658Z	
+2025-09-19T20:18:50.227654Z	Found wrangler.toml file. Reading build configuration...
+2025-09-19T20:18:50.234362Z	pages_build_output_dir: .vercel/output/static
+2025-09-19T20:18:50.23473Z	Build environment variables: 
+2025-09-19T20:18:50.234877Z	  - NEXT_PUBLIC_SITE_ENV: production
+2025-09-19T20:18:51.355414Z	Successfully read wrangler.toml file.
+2025-09-19T20:18:51.439762Z	Detected the following tools from environment: nodejs@20.19.2, npm@10.9.2
+2025-09-19T20:18:51.440492Z	Installing nodejs 20.19.2
+2025-09-19T20:18:52.513574Z	Trying to update node-build... ok
+2025-09-19T20:18:52.611379Z	To follow progress, use 'tail -f /tmp/node-build.20250919201852.496.log' or pass --verbose
+2025-09-19T20:18:52.711553Z	Downloading node-v20.19.2-linux-x64.tar.gz...
+2025-09-19T20:18:52.935678Z	-> https://nodejs.org/dist/v20.19.2/node-v20.19.2-linux-x64.tar.gz
+2025-09-19T20:18:54.633599Z	
+2025-09-19T20:18:54.633906Z	WARNING: node-v20.19.2-linux-x64 is in LTS Maintenance mode and nearing its end of life.
+2025-09-19T20:18:54.634082Z	It only receives *critical* security updates, *critical* bug fixes and documentation updates.
+2025-09-19T20:18:54.634414Z	
+2025-09-19T20:18:54.634732Z	Installing node-v20.19.2-linux-x64...
+2025-09-19T20:18:55.05115Z	Installed node-v20.19.2-linux-x64 to /opt/buildhome/.asdf/installs/nodejs/20.19.2
+2025-09-19T20:18:55.051403Z	
+2025-09-19T20:18:56.118722Z	Installing project dependencies: npm install --progress=false
+2025-09-19T20:18:59.159507Z	npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-09-19T20:19:00.038846Z	npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-09-19T20:19:00.579614Z	npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+2025-09-19T20:19:00.879847Z	npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+2025-09-19T20:19:01.369696Z	npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-09-19T20:19:01.393512Z	npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-09-19T20:19:01.829153Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T20:19:01.92016Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T20:19:01.9422Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T20:19:02.009818Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T20:19:02.089389Z	npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-19T20:19:03.759791Z	npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-09-19T20:19:09.949454Z	
+2025-09-19T20:19:09.950125Z	added 732 packages, and audited 734 packages in 13s
+2025-09-19T20:19:09.950583Z	
+2025-09-19T20:19:09.951017Z	182 packages are looking for funding
+2025-09-19T20:19:09.951165Z	  run `npm fund` for details
+2025-09-19T20:19:09.95171Z	
+2025-09-19T20:19:09.951806Z	found 0 vulnerabilities
+2025-09-19T20:19:09.973156Z	Executing user command: npx @cloudflare/next-on-pages@latest
+2025-09-19T20:19:11.136241Z	npm warn exec The following package was not found and will be installed: @cloudflare/next-on-pages@1.13.16
+2025-09-19T20:19:27.06502Z	npm warn deprecated path-match@1.2.4: This package is archived and no longer maintained. For support, visit https://github.com/expressjs/express/discussions
+2025-09-19T20:19:28.40632Z	npm warn deprecated @cloudflare/next-on-pages@1.13.16: Please use the OpenNext adapter instead: https://opennext.js.org/cloudflare
+2025-09-19T20:19:36.893158Z	⚡️ @cloudflare/next-on-pages CLI v.1.13.16
+2025-09-19T20:19:37.118179Z	⚡️ Detected Package Manager: npm (10.8.2)
+2025-09-19T20:19:37.118646Z	⚡️ Preparing project...
+2025-09-19T20:19:37.122335Z	⚡️ Project is ready
+2025-09-19T20:19:37.122523Z	⚡️ Building project...
+2025-09-19T20:19:38.344104Z	▲  npm warn exec The following package was not found and will be installed: vercel@48.1.0
+2025-09-19T20:19:41.145372Z	▲  npm warn deprecated path-match@1.2.4: This package is archived and no longer maintained. For support, visit https://github.com/expressjs/express/discussions
+2025-09-19T20:19:42.871112Z	▲  Vercel CLI 48.1.0
+2025-09-19T20:19:42.876337Z	▲  > NOTE: The Vercel CLI now collects telemetry regarding usage of the CLI.
+2025-09-19T20:19:42.876517Z	▲  > This information is used to shape the CLI roadmap and prioritize features.
+2025-09-19T20:19:42.876761Z	▲  > You can learn more, including how to opt-out if you'd not like to participate in this program, by visiting the following URL:
+2025-09-19T20:19:42.87686Z	▲  > https://vercel.com/docs/cli/about-telemetry
+2025-09-19T20:19:43.000073Z	▲  WARN! Build not running on Vercel. System environment variables will not be available.
+2025-09-19T20:19:43.149363Z	▲  WARNING: You should not upload the `.next` directory.
+2025-09-19T20:19:43.159092Z	▲  Installing dependencies...
+2025-09-19T20:19:44.66785Z	▲  up to date in 1s
+2025-09-19T20:19:44.668416Z	▲  182 packages are looking for funding
+2025-09-19T20:19:44.668641Z	▲  run `npm fund` for details
+2025-09-19T20:19:44.679171Z	▲  Detected Next.js version: 14.2.32
+2025-09-19T20:19:44.685783Z	▲  Running "npm run build"
+2025-09-19T20:19:44.91361Z	▲  > @pyloto/website@1.0.0 build
+2025-09-19T20:19:44.913832Z	▲  > next build
+2025-09-19T20:19:45.620867Z	▲  ▲ Next.js 14.2.32
+2025-09-19T20:19:45.62154Z	▲  
+2025-09-19T20:19:45.680527Z	▲  Creating an optimized production build ...
+2025-09-19T20:19:56.283808Z	▲  ✓ Compiled successfully
+2025-09-19T20:19:56.284761Z	▲  Linting and checking validity of types ...
+2025-09-19T20:19:59.34286Z	▲  Failed to compile.
+2025-09-19T20:19:59.343185Z	▲  Type error: File name '/opt/buildhome/repo/apps/website/src/components/sections/Cta.tsx' differs from already included file name '/opt/buildhome/repo/apps/website/src/components/sections/CTA.tsx' only in casing.
+2025-09-19T20:19:59.343444Z	▲  The file is in the program because:
+2025-09-19T20:19:59.343558Z	▲    Root file specified for compilation
+2025-09-19T20:19:59.343663Z	▲    Root file specified for compilation
+2025-09-19T20:19:59.343764Z	▲  File is CommonJS module because '/opt/buildhome/repo/apps/website/package.json' does not have field "type"
+2025-09-19T20:19:59.371282Z	▲  Next.js build worker exited with code: 1 and signal: null
+2025-09-19T20:19:59.389682Z	▲  npm error Lifecycle script `build` failed with error:
+2025-09-19T20:19:59.390366Z	▲  npm error code 1
+2025-09-19T20:19:59.390672Z	▲  npm error path /opt/buildhome/repo/apps/website
+2025-09-19T20:19:59.390834Z	▲  npm error workspace @pyloto/website@1.0.0
+2025-09-19T20:19:59.390981Z	▲  npm error location /opt/buildhome/repo/apps/website
+2025-09-19T20:19:59.391104Z	▲  npm error command failed
+2025-09-19T20:19:59.391298Z	▲  npm error command sh -c next build
+2025-09-19T20:19:59.406148Z	▲  Error: Command "npm run build" exited with 1
+2025-09-19T20:19:59.544943Z	
+2025-09-19T20:19:59.545278Z	⚡️ The Vercel build (`npx vercel build`) command failed. For more details see the Vercel logs above.
+2025-09-19T20:19:59.54564Z	⚡️ If you need help solving the issue, refer to the Vercel or Next.js documentation or their repositories.
+2025-09-19T20:19:59.545796Z	
+2025-09-19T20:19:59.579003Z	Failed: Error while executing user command. Exited with error code: 1
+2025-09-19T20:19:59.590144Z	Failed: build command exited with code: 1
+2025-09-19T20:20:01.522445Z	Failed: error occurred while running build command
