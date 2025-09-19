@@ -1,0 +1,29 @@
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 47.4% 11.2%;
+  --primary: 259 94% 51%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 210 16% 96%;
+  --muted-foreground: 215 16% 47%;
+  --border: 214 32% 91%;
+}
+
+.dark {
+  --background: 222.2 47.4% 11.2%;
+  --foreground: 210 40% 98%;
+  --primary: 259 94% 60%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  --border: 217 33% 25%;
+}
+
+/* Util classes (sem Tailwind plugin ainda) */
+.bg-background { background-color: hsl(var(--background)); }
+.text-foreground { color: hsl(var(--foreground)); }
+.bg-muted { background-color: hsl(var(--muted)); }
+.bg-muted\/30 { background-color: hsl(var(--muted) / 0.3); }
+.text-muted-foreground { color: hsl(var(--muted-foreground)); }
+.bg-primary { background-color: hsl(var(--primary)); }
+.text-primary-foreground { color: hsl(var(--primary-foreground)); }
+.border { border-color: hsl(var(--border)); }

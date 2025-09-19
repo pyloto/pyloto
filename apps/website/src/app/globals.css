@@ -1,0 +1,17 @@
+/* Global base resets e utilidades adicionais */
+html, body { height: 100%; }
+* { box-sizing: border-box; }
+
+::selection { background: hsl(var(--primary) / 0.15); }
+
+/* Tipografia base */
+body { font-feature-settings: "cv02","cv03","cv04","cv11"; }
+
+/* Scrollbar simples (webkit) */
+*::-webkit-scrollbar { width: 10px; }
+*::-webkit-scrollbar-track { background: hsl(var(--muted)); }
+*::-webkit-scrollbar-thumb { background: hsl(var(--primary) / 0.4); border-radius: 20px; }
+*::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.6); }
+
+/* Foco visível */
+:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }

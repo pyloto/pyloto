@@ -31,7 +31,7 @@ A **Pyloto** é uma startup de delivery inteligente que utiliza IA para revoluci
 - **Dashboard Administrativo**: Gestão completa para lojistas
 - **Sistema Multi-tenant**: Suporte a múltiplos estabelecimentos
 
-## � Características Principais
+## 🔑 Características Principais
 
 - **🤖 IA Integrada**: Assistant O.T.T.O powered by OpenAI para conversas naturais
 - **📱 WhatsApp First**: Interface principal via WhatsApp Business API
@@ -92,7 +92,7 @@ O **Pyloto** conecta três tipos de usuários através de uma plataforma intelig
 - **Prometheus & Grafana** - Monitoramento
 - **GitHub Actions** - CI/CD
 
-## � Estrutura do Projeto
+## 🗂️ Estrutura do Projeto
 
 Este é um monorepo organizado para máxima modularidade e reutilização:
 
@@ -196,6 +196,19 @@ Após inicialização, você terá acesso a:
 - **📊 Grafana**: http://localhost:3002 (admin/admin123)
 - **🐘 pgAdmin**: http://localhost:5050 (admin@pyloto.com/admin123)
 - **📧 MailHog**: http://localhost:8025
+
+## 📘 Backlog & Roadmap
+
+O backlog operacional detalhado (FSM, Homepage, Assistant tools, Painel Admin, Testes, fases futuras) foi movido para: [`docs/backlog/README.md`](docs/backlog/README.md). Este README permanece focado em visão geral, setup e arquitetura. Use o backlog para acompanhamento tático.
+
+Principais trilhas ativas (resumo):
+- Homepage pública (SEO + captura lead)
+- FSM de pedidos + endpoints /orders
+- Enriquecimento contextual do O.T.T.O (cotação real, PIX, FAQ)
+- Painel administrativo (dashboard + criação de pedido)
+- Testes base (auth, pedidos, assistant functions)
+
+Para a sequência completa de fases (7–11: Performance, Segurança Avançada, Observabilidade, Documentação Viva, Deploy Estratégico), consulte também o backlog.
 
 ## 📝 Etapas para Recriar o Projeto
 
@@ -405,35 +418,12 @@ Para iniciar, comece criando o repositório com a estrutura proposta e migre os 
 - **Edge Computing**: Processamento próximo aos usuários para baixa latência
 - **Multi-cloud**: Distribuição entre provedores para alta disponibilidade
 
-## 🚀 Próximos Passos Imediatos
+## 📄 Licença & Atualizações
 
-### Semana 1
-1. **Revisar e aprovar arquitetura** proposta neste documento
-2. **Criar repositório** com estrutura monorepo
-3. **Configurar ferramentas** de desenvolvimento (GitHub, CI/CD)
-4. **Definir equipe** e responsabilidades por módulo
+Este documento foca em visão macro. Atualizações táticas e checklist de execução: ver [`docs/backlog/README.md`](docs/backlog/README.md).
 
-### Semana 2
-1. **Implementar Fase 1**: Setup inicial e estrutura base
-2. **Configurar ambiente** de desenvolvimento local
-3. **Criar templates** e padrões de código
-4. **Definir contratos** de API entre módulos
-
-### Semana 3
-1. **Iniciar Fase 2**: Desenvolvimento do sistema backend
-2. **Implementar autenticação** e autorização básica
-3. **Criar modelos** de dados fundamentais
-4. **Configurar banco** de dados e migrações
-
-### Semana 4
-1. **Continuar Fase 2**: APIs REST principais
-2. **Implementar testes** unitários e de integração
-3. **Configurar CI/CD** pipeline básico
-4. **Revisar progresso** e ajustar plano se necessário
+**Última revisão estruturada:** Setembro 2025
 
 ---
 
-**Este documento é vivo e deve ser atualizado conforme o projeto evolui. Use-o como guia principal para o desenvolvimento do Pyloto 2.0.**
-
-**📅 Última atualização**: Setembro 2025
-**📊 Status**: ✅ Planejamento Completo - Pronto para Execução
+Feito com ❤️ pela equipe Pyloto

@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { QueryProvider } from '@/components/providers/query-provider'
+import '@/styles/tailwind.css'
+import '@/styles/theme.css'
 import { Toaster } from 'sonner'
 import './globals.css'
 
