@@ -30,6 +30,9 @@ No dashboard:
    ```
 5. Output directory: `.vercel/output/static`
 6. Node version: 20
+7. **Compatibility Flags:**
+   - Adicione o flag `nodejs_compat` em **Settings → Compatibility Flags** para Production e Preview.
+   - Isso garante que o ambiente Pages simule corretamente a compatibilidade Node.js exigida pelo adaptador.
 
 ### Campos (Resumo Direto)
 | Campo UI Cloudflare | Valor a Informar | Observações |
