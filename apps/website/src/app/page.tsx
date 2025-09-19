@@ -2,7 +2,7 @@ import { Hero } from '@/components/sections/hero'
 import { Features } from '@/components/sections/features'
 import { HowItWorks } from '@/components/sections/how-it-works'
 import { Testimonials } from '@/components/sections/testimonials'
-import { CTA } from '@/components/sections/CTA'
+import CtaSection from '@/components/sections/CtaSection'
 import { Services } from '@/components/sections/services'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
@@ -14,10 +14,10 @@ export default function HomePage() {
       <main>
         <Hero />
         <Features />
-        <HowItWorks />
+  <HowItWorks />
   <Testimonials />
   <Services />
-        <CTA />
+  <CtaSection />
       </main>
       <Footer />
     </div>

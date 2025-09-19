@@ -1,4 +1,4 @@
-export function Cta() {
+export function CtaSection() {
   return (
     <section className="py-24 border-t">
       <div className="mx-auto max-w-4xl px-4 text-center">
@@ -23,4 +23,4 @@ export function Cta() {
   )
 }
 
-export default Cta
+export default CtaSection
