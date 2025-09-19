@@ -1,4 +1,5 @@
 # Copilot Instructions – Pyloto
+# SEMPRE DOCUMENTAR ALTERAÇÕES SIGNIFICATIVAS
 - Observação: Esse Codespace esta aberto diretamente no repositório do projeto Pyloto (https://github.com/pyloto/pyloto), ou seja, não temos nenhum arquivo salvo localmente.
 
 - Este arquivo contém instruções específicas para o GitHub Copilot, visando garantir que as sugestões de código estejam alinhadas com as melhores práticas e padrões do projeto Pyloto.

@@ -27,7 +27,9 @@ apps/website/
 └── tests/                 # (futuro) testes e2e/unit
 ```
 
-## 🧱 Filosofia de Componentes
+- Estrutura de seções estática (Hero, Features, How It Works, Testimonials, Services, CTA)
+- Página dedicada /pyloto-entrega com diferenciais do produto de entregas
+- Componente reutilizável `SectionShell` para padronizar layout das seções
 | Tipo | Local | Regra |
 |------|-------|-------|
 | Seções de página | `components/sections/` | Autônomas, sem estado global, recebem dados prontos (no MVP usam conteúdo estático) |

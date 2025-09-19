@@ -29,12 +29,13 @@ npm run dev
    juridico@pyloto.com.br
 
 ### Serviços
-- Desenvolvimento de sistemas exclusivos e pensados caso a caso.
+- Plataforma de entregas inteligente (**Pyloto Entrega**) – página dedicada `/pyloto-entrega` destacando diferenciais
+- Desenvolvimento de sistemas exclusivos e pensados caso a caso
 - Automação de WhatsApp (Chatbot IA)
-- Gestão de tráfego
-- Configuração de Perfis de negócio e portifólios empresariais (Meta)
-- Vinculação de métricas de acesso de todos os perfis, redes sociais e sites
-- Intermediação de entregas com Pyloto entrega
+- Gestão de tráfego (campanhas pagas e otimização)
+- Configuração de perfis de negócio e portfólios empresariais (Meta)
+- Vinculação de métricas de acesso (dashboards unificados)
+- Criação de websites institucionais e painéis administrativos
 
 ## 🎯 Sobre o Projeto
 
@@ -97,7 +98,8 @@ O **Pyloto** conecta três tipos de usuários através de uma plataforma intelig
 - **Next.js 14** - Framework React com App Router
 - **TypeScript** - Tipagem estática
 - **Tailwind CSS** - Estilização utilitária
-- **Shadcn/ui** - Componentes reutilizáveis
+- **SectionShell** - Componente interno para layout padronizado de seções (Hero, Features, Services, etc.)
+- **Shadcn/ui** (planejado) - Componentes reutilizáveis
 
 ### Integrações
 - **OpenAI GPT-4** - Assistant O.T.T.O
@@ -439,8 +441,12 @@ Para iniciar, comece criando o repositório com a estrutura proposta e migre os 
 
 ## 📄 Licença & Atualizações
 
-### Deploy do Website (Cloudflare Pages)
+### Deploy do Website & Páginas
 Guia completo: [`docs/deployment/cloudflare-pages.md`](docs/deployment/cloudflare-pages.md)
+
+Rotas principais atuais:
+- `/` (homepage com seção Services)
+- `/pyloto-entrega` (landing dedicada à solução de entregas)
 
 Scripts úteis:
 ```bash
@@ -448,7 +454,14 @@ npm run cf:build:website     # build edge
 npm run cf:preview:website   # preview local
 npm run cf:deploy:website    # deploy produção (branch main)
 ```
-Variáveis mínimas: `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_WHATSAPP_NUMBER`, `WHATSAPP_WEBHOOK_TOKEN` (se uso de validação front/edge), segredos OpenAI/PagSeguro/Maps.
+Variáveis mínimas (resumo):
+`NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_SITE_ENV`,
+`WHATSAPP_ACCESS_TOKEN`, `WHATSAPP_PHONE_NUMBER_ID`, `WHATSAPP_BUSINESS_ACCOUNT_ID`, `WHATSAPP_API_VERSION`, `WHATSAPP_WEBHOOK_VERIFY_TOKEN`,
+`OPENAI_API_KEY`, `OPENAI_MODEL`, `OPENAI_ASSISTANT_ID`,
+`PAGSEGURO_EMAIL`, `PAGSEGURO_TOKEN`, `PAGSEGURO_SANDBOX`,
+`GOOGLE_MAPS_API_KEY`, `GOOGLE_PLACES_API_KEY`.
+
+Observação: variável antiga `WHATSAPP_WEBHOOK_TOKEN` em processo de depreciação — usar `WHATSAPP_WEBHOOK_VERIFY_TOKEN`.
 
 Este documento foca em visão macro. Atualizações táticas e checklist de execução: ver [`docs/backlog/README.md`](docs/backlog/README.md).
 
