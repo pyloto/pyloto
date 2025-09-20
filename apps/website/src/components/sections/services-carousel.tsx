@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react'
-import { Bot, Workflow, LayoutDashboard, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Bot, Workflow, LayoutDashboard, TrendingUp, Package, ChevronLeft, ChevronRight } from 'lucide-react'
 import type { ComponentType, SVGProps } from 'react'
 
 type Service = {
@@ -12,6 +12,13 @@ type Service = {
 }
 
 const SERVICES: Service[] = [
+  {
+    title: 'Pyloto Entrega',
+    slug: 'pyloto-entrega',
+    desc: 'Intermediação e orquestração de entregas urbanas com rastreio e automação conversacional.',
+    benefit: 'Eficiência operacional com transparência ponta a ponta.',
+    icon: Package
+  },
   {
     title: 'Chatbots com IA',
     slug: 'chatbot-ia',

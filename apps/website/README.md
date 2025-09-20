@@ -3,10 +3,11 @@
 Este app contém o **site público (marketing/homepage)** da Pyloto. Objetivo principal: presença SEO inicial, explicação de valor e geração de conversões (lead via WhatsApp / futuro formulário).
 
 ## 🎯 Objetivos do MVP
-- Estrutura de seções otimizada (Hero com carrossel de serviços, Testimonials expandidos, CTA aprimorado)
-- Página dedicada /pyloto-entrega com conteúdo completo (Benefícios, Como Funciona)
-- Navegação simplificada focada em conversão
-- Layout responsivo com foco em experiência mobile-first
+- Hero enxuto destacando badge + heading + subtítulo e carrossel de serviços
+- Página dedicada /pyloto-entrega concentra copy detalhada (benefícios, como funciona, métricas e CTA)
+- Testimonials sintetizados com sumário de reputação (15 avaliações 5★) e plano de integração real
+- Navegação minimizada para caminhos de conversão (Produto / Contato / Entrar)
+- Layout responsivo mobile-first
 
 ## 🗂️ Estrutura
 ```
@@ -15,11 +16,11 @@ apps/website/
 ├── package.json
 ├── public/                # Imagens, ícones, favicons
 ├── src/
-│   ├── app/               # App Router (layout.tsx, page.tsx)
+│   ├── app/               # App Router (layout.tsx, page.tsx, pyloto-entrega/)
 │   ├── components/
 │   │   ├── layout/        # Header, Footer
 │   │   ├── providers/     # Providers globais (theme, react-query)
-│   │   └── sections/      # Hero, Features, HowItWorks, Testimonials, CTA
+│   │   └── sections/      # Hero, ServicesCarousel, Testimonials, SectionShell, CTA (uso agora só em /pyloto-entrega)
 │   ├── styles/            # Arquivos globais (tailwind.css, theme.css)
 │   ├── hooks/             # (futuro) custom hooks
 │   ├── services/          # (futuro) clients REST/GraphQL
@@ -28,102 +29,25 @@ apps/website/
 └── tests/                 # (futuro) testes e2e/unit
 ```
 
-- Estrutura de seções otimizada (Hero com carrossel de serviços, Testimonials expandidos acima do Footer)
-- Página dedicada /pyloto-entrega com diferenciais completos do produto de entregas
-- Componente reutilizável `SectionShell` para padronizar layout das seções
-- Componente `ServicesCarousel` para apresentação interativa dos serviços
 | Tipo | Local | Regra |
 |------|-------|-------|
-| Seções de página | `components/sections/` | Autônomas, sem estado global, recebem dados prontos (no MVP usam conteúdo estático) |
-| Layout global | `components/layout/` | Header/Footer e wrappers comuns |
-| Providers | `components/providers/` | Somente setup de contexto (React Query, tema, analytics futuramente) |
-| UI compartilhada futura | `packages/ui-components/` | Mover quando passar a ser usado por mais de 1 app |
+| Seções de página | `components/sections/` | Autônomas, conteúdo estático ou props; sem side-effects |
+| Layout global | `components/layout/` | Header / Footer |
+| Providers | `components/providers/` | Contextos isolados (tema, query) |
+| Carrossel | `components/sections/services-carousel.tsx` | Controle local de estado | 
 
-## 🎨 Estilos & Design System
-- Tailwind CSS (a ser configurado) + tokens em `theme.css`
-- Convenção de cores: `--color-bg-*`, `--color-text-*`, `--brand-*`
-- Sem dependência de biblioteca pesada de UI no MVP; uso incremental de utilitários.
-- Futuro: extrair para pacote `@pyloto/design` se necessário.
+## 🔄 Ajustes 20-09 Pós-Revisão
+- Removidos da home: métricas, CTA de entregas e copy de produto (migraram para /pyloto-entrega)
+- Adicionado card "Pyloto Entrega" ao carrossel (primeira posição)
+- Testimonials agora: título centralizado + sumário reputacional + nota de futura integração Google Reviews
+- CTA final agora exclusivo na página /pyloto-entrega
 
-## 🌐 SEO & Metadados
-`layout.tsx` será responsável por:
-- `<html lang="pt-BR">`
-- `<meta name="description">` derivado
-- Futuro: componente `SEO` para páginas dinâmicas
-
-## 🧪 Testes (Planejado)
-- Snapshot + a11y (Testing Library + jest-axe)
-- Lighthouse budget (CI) para performance
-- E2E (Playwright) para fluxo básico CTA
-
-## 🌀 Fluxo de Evolução Futuro
-1. Adicionar conteúdo real (copy marketing)
-2. Adicionar schema.org (Organization, Website)
-3. Criar página /blog e /artigos com MDX
-4. Inserir analytics (PostHog / Plausible)
-5. Formulário de lead (POST → backend CRM)
-6. Dark mode com toggle
-
-## ♿ Acessibilidade
-Checklist mínimo (parcialmente pendente):
-- Roles semânticos por seção
-- Links sem `href="#"` (substituir por botão ou rota válida)
-- Foco visível customizado
-- Texto alternativo em imagens
-
-## 🔧 Pendências Técnicas Atuais
-| Item | Status |
-|------|--------|
-| Instalar dependências (react/next/tailwind etc.) | Concluído |
-| Configurar Tailwind (config + postcss) | Concluído |
-| Ajustar links placeholders no Header/Footer | Em progresso |
-| Conteúdo real de marketing | Pendente |
-| WhatsApp CTA funcional com mensagem pré-preenchida | Pendente |
-
-## 🚀 Execução (após dependências configuradas)
-Scripts (previstos em `package.json` do app):
-- `dev` – inicia servidor Next.js
-- `build` – build de produção
-- `start` – inicia produção
-- `lint` – lint em arquivos TS/TSX
-
-## ♻️ Boas Práticas Decididas
-- Evitar lógica de negócio dentro de componentes de seção
-- Providers simples (lazy init quando necessário)
-- Sem uso de `any`; sempre tipar props exportadas
-- Sem dependência circular (validar via eslint-import)
-
-## 🔮 Próximas Extensões Possíveis
-| Ideia | Descrição |
-|-------|-----------|
-| Pricing dinâmico | Página com cards de planos e feature matrix |
-| Blog MDX | Publicação de artigos de conteúdo orgânico |
-| Página status | Status de serviços (uptime) |
-| Portal dev | Documentação pública da API |
+## 📌 Integração Futuras (Backlog Curto)
+| Item | Status | Notas |
+|------|--------|-------|
+| Google Reviews fetch + cache | Planejado | Usar cron + API Places / scraping aprovado |
+| Animação O.T.T.O área visual | Planejado | Canvas/WebGL ou Lottie + toggle | 
+| Dark mode | Planejado | theme provider já preparado |
 
 ---
-Última atualização: 2025-09-20 (reestruturação completa do layout e navegação)
-
-## 📋 Alterações Recentes (2025-09-20)
-
-### 🎨 Reestruturação do Layout
-- **Hero redesenhado**: Adicionado cabeçalho "Soluções da Pyloto Corp" com subtítulo sobre portfólio integrado
-- **Carrossel de serviços**: Implementado componente interativo para apresentação dos serviços
-- **CTA integrado**: "Pronto para otimizar sua operação?" com botão direto para WhatsApp
-- **Testimonials expandidos**: Adicionados 6 depoimentos com fonte Google Reviews, movidos acima do Footer
-
-### 🧭 Navegação Otimizada
-- **Header simplificado**: Apenas "Pyloto entrega" e "Contato" centralizados
-- **CTA principal**: Botão "Entrar" à direita para acesso ao painel administrativo
-- **Remoção de links**: Retirados "Como funciona" e "Benefícios" (conteúdo movido para página dedicada)
-
-### 📄 Página Pyloto Entrega
-- **Conteúdo expandido**: Adicionadas seções "Benefícios" e "Como Funciona"
-- **Estrutura completa**: Apresentação abrangente do produto de entregas
-- **Links de navegação**: Conexões para Home e contato comercial
-
-### 🔧 Melhorias Técnicas
-- **Componente ServicesCarousel**: Navegação interativa com indicadores visuais
-- **Layout responsivo**: Otimizado para dispositivos móveis e desktop
-- **Acessibilidade**: Manutenção de padrões de contraste e navegação por teclado
-- **Performance**: Estrutura otimizada para carregamento rápido
+Última atualização: 2025-09-20 (refine pós realocação conteúdo /pyloto-entrega)
