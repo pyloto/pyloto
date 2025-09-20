@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-background via-background to-primary/10" />
-      <div className="mx-auto max-w-7xl px-4 pt-28 pb-20 md:pt-36 md:pb-28">
+      <div className="mx-auto max-w-7xl px-4 pt-20 pb-16 md:pt-28 md:pb-24">
         <div className="flex flex-col lg:flex-row items-start gap-14">
           {/* Left content */}
           <div className="flex-1">
