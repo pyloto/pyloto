@@ -3,9 +3,10 @@
 Este app contém o **site público (marketing/homepage)** da Pyloto. Objetivo principal: presença SEO inicial, explicação de valor e geração de conversões (lead via WhatsApp / futuro formulário).
 
 ## 🎯 Objetivos do MVP
-- Estrutura de seções estática (Hero, Features, How It Works, Testimonials, CTA)
-- Performance básica (Next.js App Router + layout otimizado)
-- Facilitar evolução futura (blog, pricing, docs, landing pages A/B)
+- Estrutura de seções otimizada (Hero com carrossel de serviços, Testimonials expandidos, CTA aprimorado)
+- Página dedicada /pyloto-entrega com conteúdo completo (Benefícios, Como Funciona)
+- Navegação simplificada focada em conversão
+- Layout responsivo com foco em experiência mobile-first
 
 ## 🗂️ Estrutura
 ```
@@ -27,9 +28,10 @@ apps/website/
 └── tests/                 # (futuro) testes e2e/unit
 ```
 
-- Estrutura de seções estática (Hero, Features, How It Works, Testimonials, Services, CTA)
-- Página dedicada /pyloto-entrega com diferenciais do produto de entregas
+- Estrutura de seções otimizada (Hero com carrossel de serviços, Testimonials expandidos acima do Footer)
+- Página dedicada /pyloto-entrega com diferenciais completos do produto de entregas
 - Componente reutilizável `SectionShell` para padronizar layout das seções
+- Componente `ServicesCarousel` para apresentação interativa dos serviços
 | Tipo | Local | Regra |
 |------|-------|-------|
 | Seções de página | `components/sections/` | Autônomas, sem estado global, recebem dados prontos (no MVP usam conteúdo estático) |
@@ -100,4 +102,28 @@ Scripts (previstos em `package.json` do app):
 | Portal dev | Documentação pública da API |
 
 ---
-Última atualização: 2025-09-19 (atualizado acessibilidade header/footer, env WhatsApp)
+Última atualização: 2025-09-20 (reestruturação completa do layout e navegação)
+
+## 📋 Alterações Recentes (2025-09-20)
+
+### 🎨 Reestruturação do Layout
+- **Hero redesenhado**: Adicionado cabeçalho "Soluções da Pyloto Corp" com subtítulo sobre portfólio integrado
+- **Carrossel de serviços**: Implementado componente interativo para apresentação dos serviços
+- **CTA integrado**: "Pronto para otimizar sua operação?" com botão direto para WhatsApp
+- **Testimonials expandidos**: Adicionados 6 depoimentos com fonte Google Reviews, movidos acima do Footer
+
+### 🧭 Navegação Otimizada
+- **Header simplificado**: Apenas "Pyloto entrega" e "Contato" centralizados
+- **CTA principal**: Botão "Entrar" à direita para acesso ao painel administrativo
+- **Remoção de links**: Retirados "Como funciona" e "Benefícios" (conteúdo movido para página dedicada)
+
+### 📄 Página Pyloto Entrega
+- **Conteúdo expandido**: Adicionadas seções "Benefícios" e "Como Funciona"
+- **Estrutura completa**: Apresentação abrangente do produto de entregas
+- **Links de navegação**: Conexões para Home e contato comercial
+
+### 🔧 Melhorias Técnicas
+- **Componente ServicesCarousel**: Navegação interativa com indicadores visuais
+- **Layout responsivo**: Otimizado para dispositivos móveis e desktop
+- **Acessibilidade**: Manutenção de padrões de contraste e navegação por teclado
+- **Performance**: Estrutura otimizada para carregamento rápido

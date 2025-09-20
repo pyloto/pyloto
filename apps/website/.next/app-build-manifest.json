@@ -2,35 +2,35 @@
   "pages": {
     "/_not-found/page": [
       "static/chunks/webpack-e353d66fd1c72c62.js",
-      "static/chunks/1dd3208c-81ed6f0c0717af80.js",
-      "static/chunks/528-6320bba1500e8e23.js",
+      "static/chunks/1dd3208c-91d4f79bf16f4223.js",
+      "static/chunks/528-9c6df9dd15b2ffa2.js",
       "static/chunks/main-app-191ee67f0eac7bb7.js",
-      "static/chunks/app/_not-found/page-bfa8fe2455fce400.js"
+      "static/chunks/app/_not-found/page-6891a98ab7889067.js"
     ],
     "/layout": [
       "static/chunks/webpack-e353d66fd1c72c62.js",
-      "static/chunks/1dd3208c-81ed6f0c0717af80.js",
-      "static/chunks/528-6320bba1500e8e23.js",
+      "static/chunks/1dd3208c-91d4f79bf16f4223.js",
+      "static/chunks/528-9c6df9dd15b2ffa2.js",
       "static/chunks/main-app-191ee67f0eac7bb7.js",
-      "static/css/3a59777add00b6a7.css",
-      "static/chunks/124-3590b5c0037950f8.js",
-      "static/chunks/app/layout-fb901e4bd6fef13b.js"
+      "static/css/0b724b462761f930.css",
+      "static/chunks/124-fac0d8612f503121.js",
+      "static/chunks/app/layout-aae1a568e0c13695.js"
     ],
     "/page": [
       "static/chunks/webpack-e353d66fd1c72c62.js",
-      "static/chunks/1dd3208c-81ed6f0c0717af80.js",
-      "static/chunks/528-6320bba1500e8e23.js",
+      "static/chunks/1dd3208c-91d4f79bf16f4223.js",
+      "static/chunks/528-9c6df9dd15b2ffa2.js",
       "static/chunks/main-app-191ee67f0eac7bb7.js",
-      "static/chunks/663-4d37a583c211f346.js",
-      "static/chunks/app/page-65af11b20723fe29.js"
+      "static/chunks/663-d2254970da30c625.js",
+      "static/chunks/app/page-6156d238d8af682c.js"
     ],
     "/pyloto-entrega/page": [
       "static/chunks/webpack-e353d66fd1c72c62.js",
-      "static/chunks/1dd3208c-81ed6f0c0717af80.js",
-      "static/chunks/528-6320bba1500e8e23.js",
+      "static/chunks/1dd3208c-91d4f79bf16f4223.js",
+      "static/chunks/528-9c6df9dd15b2ffa2.js",
       "static/chunks/main-app-191ee67f0eac7bb7.js",
-      "static/chunks/663-4d37a583c211f346.js",
-      "static/chunks/app/pyloto-entrega/page-d87a1fe52e20090c.js"
+      "static/chunks/663-d2254970da30c625.js",
+      "static/chunks/app/pyloto-entrega/page-5f71b48b7cc433aa.js"
     ]
   }
 }

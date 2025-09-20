@@ -15,11 +15,7 @@ export function Header() {
           Pyloto
         </Link>
         <nav className="hidden gap-8 text-sm font-medium md:flex" aria-label="Navegação principal">
-          <Link href="#como-funciona" className="hover:text-primary transition-colors">Como funciona</Link>
-          <Link href="#beneficios" className="hover:text-primary transition-colors">Benefícios</Link>
-          <Link href="#servicos" className="hover:text-primary transition-colors">Serviços</Link>
           <Link href="/pyloto-entrega" className="hover:text-primary transition-colors">Pyloto Entrega</Link>
-          <Link href="#depoimentos" className="hover:text-primary transition-colors">Depoimentos</Link>
           <Link href="#contato" className="hover:text-primary transition-colors">Contato</Link>
         </nav>
         <div className="flex items-center gap-3">
@@ -29,7 +25,7 @@ export function Header() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            Solicitar Entrega
+            Entrar
           </a>
           <button
             className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md border focus-visible:outline focus-visible:outline-2"
@@ -51,11 +47,7 @@ export function Header() {
         aria-label="Menu móvel"
       >
         <div className="flex flex-col px-4 py-4 gap-4 text-sm" role="menu">
-          <Link role="menuitem" onClick={()=>setOpen(false)} href="#como-funciona">Como funciona</Link>
-          <Link role="menuitem" onClick={()=>setOpen(false)} href="#beneficios">Benefícios</Link>
-          <Link role="menuitem" onClick={()=>setOpen(false)} href="#servicos">Serviços</Link>
           <Link role="menuitem" onClick={()=>setOpen(false)} href="/pyloto-entrega">Pyloto Entrega</Link>
-          <Link role="menuitem" onClick={()=>setOpen(false)} href="#depoimentos">Depoimentos</Link>
           <Link role="menuitem" onClick={()=>setOpen(false)} href="#contato">Contato</Link>
         </div>
   </nav>
