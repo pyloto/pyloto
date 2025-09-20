@@ -1,10 +1,11 @@
 import { ServicesCarousel } from './services-carousel'
+import { OttoVisual } from '@/components/visual/otto-visual'
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-background via-background to-primary/10" />
-      <div className="mx-auto max-w-7xl px-4 pt-20 pb-16 md:pt-28 md:pb-24">
+      <div className="mx-auto max-w-7xl px-4 pt-12 pb-14 md:pt-20 md:pb-20">
         <div className="flex flex-col lg:flex-row items-start gap-14">
           {/* Left content */}
           <div className="flex-1">
@@ -32,13 +33,9 @@ export function Hero() {
               </a>
             </div>
           </div>
-          {/* Visual Area */}
-          <div className="flex-1 w-full aspect-[4/5] md:aspect-[4/5] rounded-xl bg-neutral-900/70 border relative flex items-center justify-center text-muted-foreground text-sm">
-            <span className="opacity-60 px-6 text-center leading-relaxed">
-              Área visual demonstrativa para destaque de identidade / animação futuramente.
-              <br /><br />
-              Em breve: O.T.T.O - Assistente de IA com efeitos futuristas
-            </span>
+          {/* Visual Area OTTO */}
+          <div className="flex-1 w-full aspect-[4/5] md:aspect-[4/5] rounded-xl border relative bg-neutral-950/70">
+            <OttoVisual />
           </div>
         </div>
       </div>
